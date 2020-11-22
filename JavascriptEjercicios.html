@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            background: #f3f5f7;
+
+        }
+        .navbar{
+            height: 64px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #9dbdf4d9;
+            font-size: 20px;
+        }
+        .text{
+            text-decoration: none;
+             color: white;
+        }
+        pre{
+            color:blue
+        }
+    </style>
+</head>
+
+<body>
+<div class="navbar">
+    <a class="text" href="#position">Ejercicio 2</a>
+    <a class="text" href="#position2">Ejercicio 3</a>
+    <a class="text" href="#position3">Ejercicio 5</a>
+
+</div>
+
+    <section>
+        <div id="position">
+           <p>2)  Crear un módulo llamado awesomeModule para envolver las dos mezclas isCoolMixin y danceMixin.</p> 
+            <pre>
+           <code>
+                const awesomeModule = (function () {
+    
+                    var isCoolMxin = function(obj) {
+                        obj.isCool = function() {
+                        return true
+                        }
+                       }
+                
+                    var danceMixin = function(obj) {
+                        obj.dance = function() {
+                        console.log("Dancing a lot");
+                        }
+                       }
+                
+                    return {
+                        isCoolMxin: isCoolMxin,
+                        danceMixin: danceMixin
+                    };
+                })();
+            </code>
+        </pre>
+    </div>
+
+
+        <div id="position2">
+            <p>3) Modificar el código para que las instancias de Carro hereden de Vehiculo.</p> 
+            <pre>
+           <code>
+                function Vehiculo() {
+                };
+                 Vehiculo.prototype = {
+                  constructor: Vehiculo,
+                  accelerate: function() {
+                  console.log("is accelerating");
+                  }
+                }
+                function Carro() {
+                };
+                  Carro.prototype = new Vehiculo();
+                  Carro.prototype.constructor = Carro;
+                  
+                  var mycar = new Carro();
+                  mycar.accelerate (); 
+            </code>
+        </pre>
+    </div>
+
+        <div id="position3">
+            <p>5) Resolver esta Promesa usando Async y Await</p> 
+            <pre>
+           <code>
+                async function promSolveAfter5scs(){
+                    try{
+                  
+                     const finalReturn = await new Promise(resolve => {
+                       setTimeout(() =>{
+                        resolve('resuelto');
+                        alert('bienvenido')
+                       }, 5000);
+                        })
+                        return finalReturn
+                      }
+                      catch (error) {
+                          console.log(error);
+                        }
+                       }
+                       promSolveAfter5scs()
+                  
+            </code>
+        </pre>
+        </div>
+    </section>
+</body>
+</html>
